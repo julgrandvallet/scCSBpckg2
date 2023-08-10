@@ -62,4 +62,5 @@ h5ad1 <- sc_data_import("./Test_Files/h5ad_test")
 print(h5ad1)
 
 txt <- sc_data_import("./Test_Files/txt_test")
-print(h5ad1)
+print(h5ad1w32)
+
