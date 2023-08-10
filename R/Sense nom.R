@@ -58,5 +58,5 @@ print(csv1)
 loom1 <- sc_data_import("./Test_Files/example.loom")
 print(loom1)
 
-loom1 <- sc_data_import("")
-print(loom1)
+h5ad1 <- sc_data_import("./Test_Files/krumsiek11_augmented_v0-8.h5ad")
+print(h5ad1)
