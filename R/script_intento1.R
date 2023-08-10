@@ -52,9 +52,6 @@ sc_data_import <- function(file) {
          stop("Tipo de archivo no soportado.")
   )
 }
-
-
-
 primero <- sc_data_import("/home/juliangc/Videos/copy_results/exons_TPM.csv")
-
 print(primero)
+
