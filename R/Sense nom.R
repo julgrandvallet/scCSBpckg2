@@ -58,3 +58,6 @@ print(h5ad1)
 
 loom1 <- sc_data_import("/home/juliangc/R/x86_64-pc-linux-gnu-library/4.2/SummarizedExperiment/extdata/example.loom")
 print(loom1)
+
+txt1 <- sc_data_import("./Test_Files/txt_test.txt")
+print(txt1)
