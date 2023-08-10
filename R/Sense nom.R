@@ -55,3 +55,5 @@ sc_data_import <- function(file) {
 primero <- sc_data_import("/home/juliangc/Videos/copy_results/exons_TPM.csv")
 print(primero)
 
+primero_j <- sc_data_import("/Users/jmm/Desktop/Creando paquetes de R:Bioconductor para análisis transcriptómicos de célula única/1 Estructura e importe de datos/data/GSE85241_cellsystems_dataset_4donors_updated.csv")
+print(primero_j)
