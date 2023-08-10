@@ -50,7 +50,7 @@ sc_data_import <- function(file) {
          stop("Tipo de archivo no soportado.")
   )
 }
-csv1 <- sc_data_import("/home/juliangc/Videos/copy_results/exons_TPM.csv")
+csv1 <- sc_data_import("./Test_Files/csv_test.csv")
 print(csv1)
 
 h5ad1 <- sc_data_import("/home/juliangc/R/x86_64-pc-linux-gnu-library/4.3/zellkonverter/extdata/krumsiek11_augmented_v0-8.h5ad")
