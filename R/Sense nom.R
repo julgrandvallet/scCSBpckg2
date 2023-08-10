@@ -42,18 +42,23 @@ sc_data_import <- function(file) {
            return(scuttle::readSparseCounts(file, sep = detected_sep))
          },
          h5ad = {
-           demo <- system.file("extdata", file, package = "zellkonverter")
-           return(readH5AD(demo))
+           return(zellkonverter::readH5AD(file))
          },
          loom = {
-           demo <- system.file("extdata", file, package = "LoomExperiment")
-           return(import(demo, type="SingleCellLoomExperiment"))
+           return(LoomExperiment::import(file, type="SingleCellLoomExperiment"))
          },
          stop("Tipo de archivo no soportado.")
   )
 }
-primero <- sc_data_import("/home/juliangc/Videos/copy_results/exons_TPM.csv")
+csv1 <- sc_data_import("/home/juliangc/Videos/copy_results/exons_TPM.csv")
 print(primero)
+
+h5ad1 <- sc_data_import("/home/juliangc/R/x86_64-pc-linux-gnu-library/4.3/zellkonverter/extdata/krumsiek11_augmented_v0-8.h5ad")
+print(h5ad1)
 
 primero_j <- sc_data_import("/Users/jmm/Desktop/Creando paquetes de R:Bioconductor para análisis transcriptómicos de célula única/1 Estructura e importe de datos/data/GSE85241_cellsystems_dataset_4donors_updated.csv")
 print(primero_j)
+
+
+loom1 <- sc_data_import("/home/juliangc/R/x86_64-pc-linux-gnu-library/4.2/SummarizedExperiment/extdata/example.loom")
+print(loom1)
