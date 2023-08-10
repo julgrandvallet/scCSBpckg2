@@ -51,14 +51,10 @@ sc_data_import <- function(file) {
   )
 }
 csv1 <- sc_data_import("/home/juliangc/Videos/copy_results/exons_TPM.csv")
-print(primero)
+print(csv1)
 
 h5ad1 <- sc_data_import("/home/juliangc/R/x86_64-pc-linux-gnu-library/4.3/zellkonverter/extdata/krumsiek11_augmented_v0-8.h5ad")
 print(h5ad1)
-
-primero_j <- sc_data_import("/Users/jmm/Desktop/Creando paquetes de R:Bioconductor para análisis transcriptómicos de célula única/1 Estructura e importe de datos/data/GSE85241_cellsystems_dataset_4donors_updated.csv")
-print(primero_j)
-
 
 loom1 <- sc_data_import("/home/juliangc/R/x86_64-pc-linux-gnu-library/4.2/SummarizedExperiment/extdata/example.loom")
 print(loom1)
