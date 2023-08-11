@@ -1,9 +1,24 @@
-#' Title
+#' @Title scCSBpckg2
 #'
 #' @param serievector
 #'
-#' @return A matrix containing the data from the CSV.
-#' @export
+#' @return A matrix containing the data from the CSV, loom, h5ad scRNA files.
+#'
+#' @examples
+#' #csv1 <- sc_data_import("./tests/Test_Files/csv_test.csv")
+#' #print(csv1)
+
+#' #loom1 <- sc_data_import("./tests/Test_Files/loom_test.loom")
+#' #print(loom1)
+
+#' #h5ad1 <- sc_data_import("./tests/Test_Files/h5ad_test.h5ad")
+#' #print(h5ad1)
+
+#' #txt <- sc_data_import("./tests/Test_Files/txt_test.txt")
+#' #print(txt)
+
+#' #tenx <- sc_data_import("./tests/Test_Files/cellRanger_test/")
+#' #print(tenx)
 #'
 
 
@@ -60,26 +75,3 @@ sc_data_import <- function(file_or_dir) {
          stop("Tipo de archivo no soportado. El archivo debe ser csv, tsv, h5ad, loom o cellRanger.")
   )
 }
-
-
-
-
-
-
-#csv1 <- sc_data_import("./tests/Test_Files/csv_test.csv")
-#print(csv1)
-
-#loom1 <- sc_data_import("./tests/Test_Files/loom_test.loom")
-#print(loom1)
-
-#h5ad1 <- sc_data_import("./tests/Test_Files/h5ad_test.h5ad")
-#print(h5ad1)
-
-#txt <- sc_data_import("./tests/Test_Files/txt_test.txt")
-#print(txt)
-
-#tenx <- sc_data_import("./tests/Test_Files/cellRanger_test/")
-#print(tenx)
-
-
-
