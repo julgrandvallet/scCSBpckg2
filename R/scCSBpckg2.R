@@ -22,7 +22,7 @@ detect_delim <- function(file_path) {
   return(delimiters[which.max(counts)])
 }
 
-
+#Función para importar datos
 sc_data_import <- function(file_or_dir) {
   # Verifica si es un directorio
   if (file.info(file_or_dir)$isdir) {
