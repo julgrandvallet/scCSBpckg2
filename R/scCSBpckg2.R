@@ -1,8 +1,6 @@
 #' @title scCSBpckg2
 #'
-#' @param
-#'
-#' @return A matrix containing the data from the CSV, loom, h5ad scRNA files.
+#' @return A matrix containing the data from the CSV, loom, h5ad and cellRanger scRNA files.
 #'
 #' @examples
 #' #csv1 <- sc_data_import("./tests/Test_Files/csv_test.csv")
