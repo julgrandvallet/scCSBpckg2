@@ -2,11 +2,11 @@
 #'
 #' @param serievector
 #'
-#' @return
+#' @return A matrix containing the data from the CSV.
 #' @export
 #'
 #' @examples
-#'
+#' sc_data_import("path/to/some/file.csv")
 
 
 # Función auxiliar para detectar el delimitador
