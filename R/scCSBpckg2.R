@@ -1,4 +1,4 @@
-#' @Title scCSBpckg2
+#' @title scCSBpckg2
 #'
 #' @param
 #'
