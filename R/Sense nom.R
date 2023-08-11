@@ -9,47 +9,40 @@
 #'
 
 library(scuttle)
+sc_data_import <- function(file_or_dir) {
+  # Verifica si es un directorio
+  if (file.info(file_or_dir)$isdir) {
+    return(DropletUtils::read10xCounts(file_or_dir))
+  }
 
-# Función auxiliar para detectar el delimitador
-detect_delim <- function(file_path) {
-  first_line <- readLines(file_path, n = 1)
-  delimiters <- c(",", "\t", "|", " ")
-
-  counts <- sapply(delimiters, function(delim) {
-    sum(unlist(strsplit(first_line, split = "")) == delim)
-  })
-
-  return(delimiters[which.max(counts)])
-}
-
-sc_data_import <- function(file) {
   # Verifica si el archivo existe
-  if (!file.exists(file)) {
+  if (!file.exists(file_or_dir)) {
     stop("El archivo especificado no existe.")
   }
 
   # Extrae la extensión del archivo
-  file_extension <- tools::file_ext(file)
+  file_extension <- tools::file_ext(file_or_dir)
 
   # Decide cómo procesar el archivo según su extensión
   switch(file_extension,
          csv = {
-           detected_sep <- detect_delim(file)
-           return(scuttle::readSparseCounts(file, sep = detected_sep))
+           detected_sep <- detect_delim(file_or_dir)
+           return(scuttle::readSparseCounts(file_or_dir, sep = detected_sep))
          },
          tsv = {
-           detected_sep <- detect_delim(file)
-           return(scuttle::readSparseCounts(file, sep = detected_sep))
+           detected_sep <- detect_delim(file_or_dir)
+           return(scuttle::readSparseCounts(file_or_dir, sep = detected_sep))
          },
          h5ad = {
-           return(zellkonverter::readH5AD(file))
+           return(zellkonverter::readH5AD(file_or_dir))
          },
          loom = {
-           return(LoomExperiment::import(file, type="SingleCellLoomExperiment"))
+           return(LoomExperiment::import(file_or_dir, type="SingleCellLoomExperiment"))
          },
          stop("Tipo de archivo no soportado.")
   )
 }
+
 
 
 
@@ -59,9 +52,12 @@ print(csv1)
 loom1 <- sc_data_import("./Test_Files/loom_test.loom")
 print(loom1)
 
-h5ad1 <- sc_data_import("./Test_Files/h5ad_test")
+h5ad1 <- sc_data_import("./Test_Files/h5ad_test.h5ad")
 print(h5ad1)
 
-txt <- sc_data_import("./Test_Files/txt_test")
+txt <- sc_data_import("./Test_Files/txt_test.txt")
 print(txt)
+
+tenx <- sc_data_import("")
+
 
