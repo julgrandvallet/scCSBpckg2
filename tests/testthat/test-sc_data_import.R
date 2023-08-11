@@ -1,16 +1,16 @@
 test_that("sc_data_import procesa correctamente archivos CSV", {
-  result <- sc_data_import("./tests/testthat/Test_Files/csv_test.csv")
+  result <- sc_data_import("./tests/Test_Files/csv_test.csv")
   # Verificar que result es de la clase o tipo esperado
   expect_true(inherits(result, "Matrix"))
   # Otros asserts para verificar contenido, dimensiones, etc.
 })
 
 test_that("sc_data_import arroja un error para directorios con mas o menos de 3 archivos", {
-  expect_error(sc_data_import("./tests/testthat/Test_Files/"), "El directorio debe contener exactamente 3 archivos para ser leido con read10xCounts.")
+  expect_error(sc_data_import("./tests/Test_Files/"), "El directorio debe contener exactamente 3 archivos para ser leido con read10xCounts.")
 })
 
 
 test_that("sc_data_import corre correctamente", {
-  expect_no_error(sc_data_import("./tests/testthat/Test_Files/csv_test.csv"))
+  expect_no_error(sc_data_import("./tests/Test_Files/csv_test.csv"))
 })
 

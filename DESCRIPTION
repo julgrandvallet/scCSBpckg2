@@ -17,5 +17,6 @@ Imports:
     DropletUtils,
     LoomExperiment,
     scuttle,
-    zellkonverter
+    zellkonverter,
+    tools
 LazyData: true
