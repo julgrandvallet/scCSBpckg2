@@ -10,6 +10,19 @@
 
 library(scuttle)
 
+# Función auxiliar para detectar el delimitador
+detect_delim <- function(file_path) {
+  first_line <- readLines(file_path, n = 1)
+  delimiters <- c(",", "\t", "|", " ")
+
+  counts <- sapply(delimiters, function(delim) {
+    sum(unlist(strsplit(first_line, split = "")) == delim)
+  })
+
+  return(delimiters[which.max(counts)])
+}
+
+
 sc_data_import <- function(file_or_dir) {
   # Verifica si es un directorio
   if (file.info(file_or_dir)$isdir) {
