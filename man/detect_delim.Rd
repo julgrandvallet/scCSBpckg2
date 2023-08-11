@@ -15,6 +15,3 @@ A matrix containing the data from the CSV.
 \description{
 Title
 }
-\examples{
-sc_data_import("path/to/some/file.csv")
-}

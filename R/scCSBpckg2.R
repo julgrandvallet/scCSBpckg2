@@ -5,11 +5,9 @@
 #' @return A matrix containing the data from the CSV.
 #' @export
 #'
-#' @examples
-#' sc_data_import("path/to/some/file.csv")
 
 
-# Función auxiliar para detectar el delimitador
+# Funcion auxiliar para detectar el delimitador
 detect_delim <- function(file_path) {
   first_line <- readLines(file_path, n = 1)
   delimiters <- c(",", "\t", "|", " ")
@@ -21,7 +19,7 @@ detect_delim <- function(file_path) {
   return(delimiters[which.max(counts)])
 }
 
-#Función para importar datos
+#Funcion para importar datos
 sc_data_import <- function(file_or_dir) {
   # Verifica si el archivo o directorio existe
   if (!file.exists(file_or_dir)) {
@@ -34,16 +32,16 @@ sc_data_import <- function(file_or_dir) {
     files_in_dir <- list.files(file_or_dir, recursive = FALSE)
 
     if (length(files_in_dir) != 3) {
-      stop("El directorio debe contener exactamente 3 archivos para ser leído con read10xCounts.")
+      stop("El directorio debe contener exactamente 3 archivos para ser leido con read10xCounts.")
     }
 
     return(DropletUtils::read10xCounts(file_or_dir))
   }
 
-  # Extrae la extensión del archivo
+  # Extrae la extension del archivo
   file_extension <- tools::file_ext(file_or_dir)
 
-  # Decide cómo procesar el archivo según su extensión
+  # Decide como procesar el archivo segun su extension
   switch(file_extension,
          csv = {
            detected_sep <- detect_delim(file_or_dir)
