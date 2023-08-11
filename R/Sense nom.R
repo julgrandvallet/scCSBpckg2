@@ -53,10 +53,10 @@ sc_data_import <- function(file) {
 csv1 <- sc_data_import("./Test_Files/csv_test.csv")
 print(csv1)
 
-h5ad1 <- sc_data_import("/home/juliangc/R/x86_64-pc-linux-gnu-library/4.3/zellkonverter/extdata/krumsiek11_augmented_v0-8.h5ad")
+h5ad1 <- sc_data_import("./Test_Files/h5ad_test.h5ad")
 print(h5ad1)
 
-loom1 <- sc_data_import("/home/juliangc/R/x86_64-pc-linux-gnu-library/4.2/SummarizedExperiment/extdata/example.loom")
+loom1 <- sc_data_import("./Test_Files/loom_test.loom")
 print(loom1)
 
 txt1 <- sc_data_import("./Test_Files/txt_test.txt")
