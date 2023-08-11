@@ -9,9 +9,16 @@
 #'
 
 library(scuttle)
+
 sc_data_import <- function(file_or_dir) {
   # Verifica si es un directorio
   if (file.info(file_or_dir)$isdir) {
+    files_in_dir <- list.files(file_or_dir, recursive = FALSE)
+
+    if (length(files_in_dir) != 3) {
+      stop("El directorio debe contener exactamente 3 archivos para ser leído con read10xCounts.")
+    }
+
     return(DropletUtils::read10xCounts(file_or_dir))
   }
 
@@ -58,6 +65,8 @@ print(h5ad1)
 txt <- sc_data_import("./Test_Files/txt_test.txt")
 print(txt)
 
-tenx <- sc_data_import("")
+tenx <- sc_data_import("./Test_Files/cellRanger_test/")
+print(tenx)
+
 
 
