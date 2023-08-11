@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param serievector
+#' @param
 #'
 #' @return A matrix containing the data from the CSV.
 #' @export
