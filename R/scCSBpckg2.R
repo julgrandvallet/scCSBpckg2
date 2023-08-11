@@ -8,8 +8,6 @@
 #' @examples
 #'
 
-library(scuttle)
-
 
 # Función auxiliar para detectar el delimitador
 detect_delim <- function(file_path) {
