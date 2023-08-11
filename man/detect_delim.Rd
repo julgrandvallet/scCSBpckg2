@@ -6,9 +6,6 @@
 \usage{
 detect_delim(file_path)
 }
-\arguments{
-\item{serievector}{}
-}
 \value{
 A matrix containing the data from the CSV.
 }

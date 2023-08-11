@@ -1,6 +1,6 @@
 #' @Title scCSBpckg2
 #'
-#' @param serievector
+#' @param
 #'
 #' @return A matrix containing the data from the CSV, loom, h5ad scRNA files.
 #'
