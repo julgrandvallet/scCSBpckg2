@@ -51,8 +51,6 @@ sc_data_import <- function(file_or_dir) {
 }
 
 
-
-
 csv1 <- sc_data_import("./Test_Files/csv_test.csv")
 print(csv1)
 
