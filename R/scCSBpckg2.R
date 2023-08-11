@@ -59,7 +59,7 @@ sc_data_import <- function(file_or_dir) {
          loom = {
            return(LoomExperiment::import(file_or_dir, type="SingleCellLoomExperiment"))
          },
-         stop("Tipo de archivo no soportado.")
+         stop("Tipo de archivo no soportado. El archivo debe ser csv, tsv, h5ad, loom o cellRanger.")
   )
 }
 
