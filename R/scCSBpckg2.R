@@ -10,6 +10,7 @@
 
 library(scuttle)
 
+
 # Función auxiliar para detectar el delimitador
 detect_delim <- function(file_path) {
   first_line <- readLines(file_path, n = 1)
@@ -24,8 +25,14 @@ detect_delim <- function(file_path) {
 
 #Función para importar datos
 sc_data_import <- function(file_or_dir) {
+  # Verifica si el archivo o directorio existe
+  if (!file.exists(file_or_dir)) {
+    stop("El archivo especificado no existe.")
+  }
+
   # Verifica si es un directorio
-  if (file.info(file_or_dir)$isdir) {
+  is_dir <- file.info(file_or_dir)$isdir
+  if (isTRUE(is_dir)) {
     files_in_dir <- list.files(file_or_dir, recursive = FALSE)
 
     if (length(files_in_dir) != 3) {
@@ -33,11 +40,6 @@ sc_data_import <- function(file_or_dir) {
     }
 
     return(DropletUtils::read10xCounts(file_or_dir))
-  }
-
-  # Verifica si el archivo existe
-  if (!file.exists(file_or_dir)) {
-    stop("El archivo especificado no existe.")
   }
 
   # Extrae la extensión del archivo
@@ -62,6 +64,10 @@ sc_data_import <- function(file_or_dir) {
          stop("Tipo de archivo no soportado. El archivo debe ser csv, tsv, h5ad, loom o cellRanger.")
   )
 }
+
+
+
+
 
 
 csv1 <- sc_data_import("./Test_Files/csv_test.csv")
