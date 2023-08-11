@@ -7,7 +7,7 @@
 detect_delim(file_path)
 }
 \value{
-A matrix containing the data from the CSV, loom, h5ad scRNA files.
+A matrix containing the data from the CSV, loom, h5ad and cellRanger scRNA files.
 }
 \description{
 scCSBpckg2
