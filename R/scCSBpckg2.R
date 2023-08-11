@@ -68,20 +68,20 @@ sc_data_import <- function(file_or_dir) {
 
 
 
-csv1 <- sc_data_import("./tests/Test_Files/csv_test.csv")
-print(csv1)
+#csv1 <- sc_data_import("./tests/Test_Files/csv_test.csv")
+#print(csv1)
 
-loom1 <- sc_data_import("./tests/Test_Files/loom_test.loom")
-print(loom1)
+#loom1 <- sc_data_import("./tests/Test_Files/loom_test.loom")
+#print(loom1)
 
-h5ad1 <- sc_data_import("./tests/Test_Files/h5ad_test.h5ad")
-print(h5ad1)
+#h5ad1 <- sc_data_import("./tests/Test_Files/h5ad_test.h5ad")
+#print(h5ad1)
 
-txt <- sc_data_import("./tests/Test_Files/txt_test.txt")
-print(txt)
+#txt <- sc_data_import("./tests/Test_Files/txt_test.txt")
+#print(txt)
 
-tenx <- sc_data_import("./tests/Test_Files/cellRanger_test/")
-print(tenx)
+#tenx <- sc_data_import("./tests/Test_Files/cellRanger_test/")
+#print(tenx)
 
 
 
