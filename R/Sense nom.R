@@ -52,6 +52,7 @@ sc_data_import <- function(file) {
 }
 
 
+
 csv1 <- sc_data_import("./Test_Files/csv_test.csv")
 print(csv1)
 
@@ -62,5 +63,5 @@ h5ad1 <- sc_data_import("./Test_Files/h5ad_test")
 print(h5ad1)
 
 txt <- sc_data_import("./Test_Files/txt_test")
-print(h5ad1w32)
+print(txt)
 
